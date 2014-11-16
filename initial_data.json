@@ -1,0 +1,84 @@
+[
+{
+   "fields": {
+      "name": "Kristal"
+   },
+   "model": "api.team",
+   "pk": 1
+},
+{
+   "fields": {
+      "accountEnabled": true,
+      "team": 1,
+      "apps": [
+         2,
+         1,
+         3
+      ],
+      "phoneNumber": "",
+      "user": 1,
+      "accountCreationSecretKey": ""
+   },
+   "model": "api.profile",
+   "pk": 1
+},
+{
+   "fields": {
+      "prettyName": "",
+      "name": "Famicity"
+   },
+   "model": "api.app",
+   "pk": 1
+},
+{
+   "fields": {
+      "prettyName": "",
+      "name": "BFMTV"
+   },
+   "model": "api.app",
+   "pk": 2
+},
+{
+   "fields": {
+      "prettyName": "",
+      "name": "HelloCoton"
+   },
+   "model": "api.app",
+   "pk": 3
+},
+{
+   "fields": {
+      "creationDate": "2014-11-16T17:45:26Z",
+      "app": 1,
+      "bundleName": "",
+      "os": 1,
+      "versionNumber": "1.2.0"
+   },
+   "model": "api.build",
+   "pk": 1
+},
+{
+   "fields": {
+      "prettyName": "iOS",
+      "name": "ios"
+   },
+   "model": "api.os",
+   "pk": 1
+},
+{
+   "fields": {
+      "prettyName": "Android",
+      "name": "android"
+   },
+   "model": "api.os",
+   "pk": 2
+},
+{
+   "fields": {
+      "prettyName": "Windows Phone",
+      "name": "wp"
+   },
+   "model": "api.os",
+   "pk": 3
+}
+]

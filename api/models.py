@@ -36,15 +36,16 @@ class Profile(models.Model):
 
 class App(models.Model):
     name = models.CharField(max_length=90)
-    technicalName = models.CharField(max_length=90, blank=True)
+    prettyName = models.CharField(max_length=90, blank=True, null=True)
+    #    iconPath        = models.CharField(max_length=75, blank=True, null=True)
 
     def __unicode__(self):
-        return self.name
+        return self.prettyName or self.name
 
     def get_dict(self):
         return dict(
             name = self.name,
-            technicalName = self.technicalName
+            prettyName = self.prettyName or self.name
         )
 
     class Meta:
@@ -61,19 +62,15 @@ class Build(models.Model):
     
 #    buildPath        = models.CharField(max_length=75, blank=True, null=True)
 #    emailAppUrl     = models.CharField(max_length=75, blank=True, null=True)
-#    iconPath        = models.CharField(max_length=75, blank=True, null=True)
+
 
     def __unicode__(self):
         return self.app.name+" "+self.versionNumber
 
     def get_dict(self):
         return dict(
-            #app = dict(
-            #    id = self.app.pk,
-            #    name = self.app.name
-            #),
             versionNumber = self.versionNumber,
-            creationDate = self.creationDate
+            creationDate = self.creationDate.strftime('%Y-%m-%d %H:%M:%S')
         )
 
     def os_list(self):
@@ -85,16 +82,14 @@ class Build(models.Model):
 
 
 class Os(models.Model):
-    name = models.CharField(max_length=45, null=True, blank=True)
-    technicalName = models.CharField(max_length=45)
+    name = models.CharField(max_length=45)
+    prettyName = models.CharField(max_length=45, null=True, blank=True)
 
     def __unicode__(self):
-        if self.name != "":
-            return self.name
-        return self.technicalName
+        return self.prettyName or self.name
 
     def get_dict(self):
         return dict(
-            technicalName = self.technicalName,
             name = self.name,
+            prettyName = self.prettyName or self.name
         )

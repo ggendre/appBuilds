@@ -11,22 +11,22 @@ urlpatterns = patterns('',
     # ex: /api/app/create/
     #url(r'^apps/create/$', views.appCreate, name='appCreate'),
     # ex: /api/app/myApp/
-    #url(r'^apps/(?P<appName>\s+)/$', views.appView, name='appView'),
+    #url(r'^apps/(?P<appName>\w+)/$', views.appView, name='appView'),
     # ex: /api/app/myApp/update
-    #url(r'^apps/(?P<appName>\s+)/update/$', views.appUpdate, name='appUpdate'),
+    #url(r'^apps/(?P<appName>\w+)/update/$', views.appUpdate, name='appUpdate'),
     # ex: /api/app/myApp/destroy
-    #url(r'^apps/(?P<appName>\s+)/destroy/$', views.appDestroy, name='appDestroy'),
+    #url(r'^apps/(?P<appName>\w+)/destroy/$', views.appDestroy, name='appDestroy'),
 
     # ex: /api/app/myApp/builds
-    url(r'^apps/(?P<appName>\s+)/builds/$', views.builds, name='builds'),
+    url(r'^apps/(?P<appName>\w+)/builds/$', views.builds, name='builds'),
     # ex: /api/app/myApp/build/create/
-    url(r'^apps/(?P<appName>\s+)/build/create/$', views.buildCreate, name='buildCreate'),
+    url(r'^apps/(?P<appName>\w+)/build/create/$', views.buildCreate, name='buildCreate'),
     # ex: /api/app/myApp/build/1.0.2/
-    url(r'^apps/(?P<appName>\s+)/build/(?P<buildNumber>\s+)/$', views.buildView, name='buildView'),
+    url(r'^apps/(?P<appName>\w+)/build/(?P<buildNumber>\w+)/$', views.buildView, name='buildView'),
     # ex: /api/app/myApp/build/1.0.2/update/
-    url(r'^apps/(?P<appName>\s+)/build/(?P<buildNumber>\s+)/update/$', views.buildUpdate, name='buildUpdate'),
+    url(r'^apps/(?P<appName>\w+)/build/(?P<buildNumber>\w+)/update/$', views.buildUpdate, name='buildUpdate'),
     # ex: /api/app/myApp/build/1.0.2/destroy/
-    url(r'^apps/(?P<appName>\s+)/build/(?P<buildNumber>\s+)/destroy/$', views.buildDestroy, name='buildDestroy'),
+    url(r'^apps/(?P<appName>\w+)/build/(?P<buildNumber>\w+)/destroy/$', views.buildDestroy, name='buildDestroy'),
 
 
     # ex: /api/team/create/
